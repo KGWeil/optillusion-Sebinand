@@ -26,14 +26,22 @@ public class Figuren extends PApplet
         // dass Bild C gezeichnet wird
 
         // ***** hier kommen deine Anweisungen hin ************
-
+        rect(10,10,100,100);
+        circle(60,60,80);
+        circle(60,60,60);
+        circle(60,60,40);
+        
+        circle(60,170,100);
+        rect(35,145,50,50);
+        rect(45,155,30,30);
+        rect(55,165,10,10);
         // ***** Ende der eigenen Anweisungen **********
     }
 
     //***** Zusatzaufgabe bzw. Hausaufgabe *************
     public void zeichneBildA() {
         // ***** hier kommen deine Anweisungen hin ************
-
+        
         // ***** Ende der eigenen Anweisungen **********  
     }
 
