@@ -22,8 +22,13 @@ public class FigurC_mitSchleife extends PApplet
 
     public void zeichneBildC() {
         // ***** hier kommen deine Anweisungen hin ************
-   
+        
         // ***** Ende der eigenen Anweisungen **********
+    }
+    public void zeichneBildB(){
+        for(int i=20; i>0; i--){
+            circle(110,110,10*i);
+        }
     }
 
     /**
@@ -35,6 +40,7 @@ public class FigurC_mitSchleife extends PApplet
     public void setup()
     {
         zeichneBildC(); // Aufruf deiner Methode
+        zeichneBildB();
     }
 
 

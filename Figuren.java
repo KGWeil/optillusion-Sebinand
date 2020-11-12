@@ -26,11 +26,12 @@ public class Figuren extends PApplet
         // dass Bild C gezeichnet wird
 
         // ***** hier kommen deine Anweisungen hin ************
+        for(int i=0; i<4; i=i+1){
         rect(10,10,100,100);
         circle(60,60,80);
         circle(60,60,60);
         circle(60,60,40);
-        
+    }
         circle(60,170,100);
         rect(35,145,50,50);
         rect(45,155,30,30);
