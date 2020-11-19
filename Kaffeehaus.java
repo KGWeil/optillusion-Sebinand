@@ -13,6 +13,7 @@ public class Kaffeehaus extends PApplet
 {
     int s=40;
     int t=0;                //veränderung des x wertes der quadrate
+    int[] abstaende = { 0,10,20,10,0,10,20,10,0 };
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -36,7 +37,7 @@ public class Kaffeehaus extends PApplet
         strokeWeight(1);
         parallelen();
         fill(0);
-        zeichneAlleQuadrate();
+        zeichneAlleQuadrate2();
     }
 
     public void parallelen() 
@@ -47,6 +48,10 @@ public class Kaffeehaus extends PApplet
         }    
     }
 
+    /**
+     * Zeichnet 10 Quadrate in ein Reihe
+     *
+     */
     public void zeichneQuadrate(){
         for(int i=0; i<10; i++){
             rect(10,i*s,s,s+i*s);
@@ -65,8 +70,19 @@ public class Kaffeehaus extends PApplet
                 if(i==2||i==6){
                     t=20;
                 }
-                
+
                 rect(10+k*s*2+t,i*s,s,s);
+            }
+        }
+    }
+    /* Andere Programmierungsweise: mit [] abstaend
+     * 
+     * 
+     */
+    public void zeichneAlleQuadrate2(){
+        for(int k=0; k<8; k++){
+            for(int i=0; i<9; i++){
+                rect(10+k*s*2+abstaende[i],i*s,s,s);
             }
         }
     }
