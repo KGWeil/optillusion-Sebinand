@@ -12,7 +12,7 @@ import processing.core.PFont;
 public class Kaffeehaus extends PApplet
 {
     int s=40;
-
+    int t=0;                //veränderung des x wertes der quadrate
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -55,8 +55,18 @@ public class Kaffeehaus extends PApplet
 
     public void zeichneAlleQuadrate(){
         for(int k=0; k<8; k++){
-            for(int i=0; i<10; i++){
-                rect(10+k*s*2,i*s,s,s);
+            for(int i=0; i<9; i++){
+                if(i==0||i==4||i==8){
+                    t=0;
+                }
+                if(i==1||i==3||i==5||i==7){
+                    t=10;
+                }
+                if(i==2||i==6){
+                    t=20;
+                }
+                
+                rect(10+k*s*2+t,i*s,s,s);
             }
         }
     }
