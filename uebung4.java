@@ -14,7 +14,7 @@ public class uebung4 extends PApplet
     int R=0;
     int G=0;
     int B=0;
-    float RRandom=random(255);
+    float RRandom=random(0,255);
     float GRandom=random(255);
     float BRandom=random(255);
     int Richtung=1;
@@ -26,7 +26,7 @@ public class uebung4 extends PApplet
     public void settings()
     {
         size(500,500);
-
+        
     }        
 
     /**
@@ -57,7 +57,9 @@ public class uebung4 extends PApplet
     public void draw()
     {
         vorbereitung();
-
+        if(R>255)R=255;
+        if(G>255)G=255;
+        if(B>255)B=255;
         // einstellung();
 
     }
