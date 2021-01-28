@@ -10,11 +10,14 @@ import processing.core.PFont;
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class uebung4 extends PApplet
-{   int Schrittweite=10;
+{   int Schrittweite=1;
     int R=0;
     int G=0;
     int B=0;
-    int key;
+    float RRandom=random(255);
+    float GRandom=random(255);
+    float BRandom=random(255);
+    int Richtung=1;
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -23,6 +26,7 @@ public class uebung4 extends PApplet
     public void settings()
     {
         size(500,500);
+
     }        
 
     /**
@@ -33,9 +37,15 @@ public class uebung4 extends PApplet
     @Override
     public void setup()
     {
-        background(66, 165, 250);
-        fill(95, 158, 160);
+        background(255);
+        fill(RRandom, GRandom, BRandom);
         rect(50,50,200,200);
+        println("Herzlich Willkommen im RGB-Farbspiel");
+        println("Versuche die Farbe des kleinen Quadrats die des großen anzupassen");
+        println("Verändere mit den Tasten r, g und b den RGB-Wert in die positivie Richtung");
+        println("Verändere mit den Tasten R, G und B den RGB-Wert in die negative Richtung");
+        println("Mit der Leertaste kannst du überprüfen, ob du richtig liegst");
+
     }
 
     /**
@@ -47,23 +57,63 @@ public class uebung4 extends PApplet
     public void draw()
     {
         vorbereitung();
-        einstellung();
+
+        // einstellung();
+
     }
 
+    @Override
     public void keyPressed(){
-        if(key == ‘r‘){
-            R=R+1;
+
+        if(key == 'r'){
+            R=R+Schrittweite;
         }
-        if(key== ‘g‘){
-            G=G+1;
+        if(key== 'g'){
+            G=G+Schrittweite;
         }
-        if(key== ‘b‘){
-            B=B+B;
+        if(key== 'b'){
+            B=B+Schrittweite;
         }
+        if(key == 'R'){
+            R=R-Schrittweite;
+        }
+        if(key== 'G'){
+            G=G-Schrittweite;
+        }
+        if(key== 'B'){
+            B=B-Schrittweite;
+        }
+        if(key== (char)32){
+            println("RGB-Farben:");
+            println(RRandom);
+            println(GRandom);
+            println(BRandom);
+            println("Deine RGB-Farben");
+            println(R);
+            println(G);
+            println(B);
+            if(R==RRandom&&G==GRandom&&B==BRandom){
+                println("Gut gemacht. Du hast es geschafft :D");
+            } else{
+                println("Noch nicht ganz geschafft");
+            }
+        }
+    }
+
+    public void mouseClicked(){
+        if(Schrittweite==10){
+            Schrittweite=1;
+            print("Schrittweite=");
+            println(Schrittweite);
+        }else{
+            Schrittweite=10;
+            print("Schrittweite=");
+            println(Schrittweite);
+        }
+
     }
 
     public void vorbereitung(){
-
         fill(R,G,B);
         rect(125,125,50,50);
     }
