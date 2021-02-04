@@ -68,7 +68,7 @@ public class Wellen2 extends PApplet
                 einRechteck(r/2+(a+r)*i,r/2+x*(a+r),farbe);
             }
         }
-    }	
+    }    
 
     /**
      * Mit der main()-Methode wird das Programm gestartet.

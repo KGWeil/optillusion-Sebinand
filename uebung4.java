@@ -14,9 +14,9 @@ public class uebung4 extends PApplet
     int R=0;
     int G=0;
     int B=0;
-    float RRandom=random(0,255);
-    float GRandom=random(255);
-    float BRandom=random(255);
+    int RRandom=(int) random(255);
+    int GRandom=(int)random(255);
+    int BRandom=(int)random(255);
     int Richtung=1;
     /**
      * settings() Methode 
@@ -26,7 +26,7 @@ public class uebung4 extends PApplet
     public void settings()
     {
         size(500,500);
-        
+
     }        
 
     /**
@@ -57,12 +57,7 @@ public class uebung4 extends PApplet
     public void draw()
     {
         vorbereitung();
-        if(R>255)R=255;
-        if(G>255)G=255;
-        if(B>255)B=255;
-        if(R<0)R=0;
-        if(G<0)G=0;
-        if(B<0)B=0;
+
         // einstellung();
 
     }
@@ -103,19 +98,22 @@ public class uebung4 extends PApplet
                 println("Noch nicht ganz geschafft");
             }
         }
+        if(R>255)R=255;
+        if(G>255)G=255;
+        if(B>255)B=255;
+        if(R<0)R=0;
+        if(G<0)G=0;
+        if(B<0)B=0;
     }
 
     public void mouseClicked(){
         if(Schrittweite==10){
             Schrittweite=1;
-            print("Schrittweite=");
-            println(Schrittweite);
         }else{
-            Schrittweite=10;
-            print("Schrittweite=");
-            println(Schrittweite);
+            Schrittweite=10; 
         }
-
+        print("Schrittweite=");
+        println(Schrittweite);
     }
 
     public void vorbereitung(){
